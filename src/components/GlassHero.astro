@@ -1,11 +1,10 @@
 ---
 ---
-import logo from '../assets/capq-logo.png';
 
 <section class="relative flex min-h-[100svh] flex-col items-center justify-center px-5 pb-20 pt-32">
   <!-- Background ghost watermark using logo -->
   <div aria-hidden class="an-ghost pointer-events-none absolute left-1/2 top-[18%] -z-10 -translate-x-1/2 select-none opacity-[0.04]">
-    <img src={logo} alt="" class="w-[50vw] max-w-[600px]" />
+    <img src={import.meta.env.BASE_URL + '/capq-logo.png'} alt="" class="w-[50vw] max-w-[600px]" />
   </div>
 
   <!-- Floating glass accent orbs -->
@@ -63,7 +62,7 @@ import logo from '../assets/capq-logo.png';
              style="background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 100%);"></div>
         
         <!-- The logo -->
-        <img src={logo} alt="CapQ — Right Capital, Structured Right" 
+        <img src={import.meta.env.BASE_URL + '/capq-logo.png'} alt="CapQ — Right Capital, Structured Right" 
              class="relative z-10 w-full h-auto max-h-[100px] object-contain drop-shadow-[0_2px_8px_rgba(14,18,14,0.06)] transition-transform duration-500 group-hover:scale-[1.03]" />
       </div>
     </div>
