@@ -1,0 +1,128 @@
+---
+---
+
+<section class="relative flex min-h-[100svh] flex-col items-center justify-center px-5 pb-20 pt-32">
+  <!-- Background ghost watermark using logo -->
+  <div aria-hidden class="an-ghost pointer-events-none absolute left-1/2 top-[18%] -z-10 -translate-x-1/2 select-none opacity-[0.04]">
+    <img src="/capq-logo.png" alt="" class="w-[50vw] max-w-[600px]" />
+  </div>
+
+  <!-- Floating glass accent orbs -->
+  <div class="glass-float pointer-events-none absolute right-[10%] top-[20%] -z-10 h-32 w-32 animate-float rounded-full bg-lime/20 blur-2xl" style="backdrop-filter: blur(40px)"></div>
+  <div class="glass-float pointer-events-none absolute left-[8%] bottom-[28%] -z-10 h-24 w-24 animate-float-delayed rounded-full bg-green/15 blur-xl" style="backdrop-filter: blur(30px)"></div>
+  <div class="glass-float pointer-events-none absolute right-[20%] bottom-[15%] -z-10 h-16 w-16 animate-float rounded-full bg-green-bright/10 blur-lg" style="backdrop-filter: blur(20px); animation-delay: 1s"></div>
+
+  <!-- Coming soon notice -->
+  <div class="an-notice mb-7 flex flex-col items-center gap-1 text-center">
+    <span class="font-hand text-2xl text-green-deep sm:text-3xl">we're putting the pieces together…</span>
+    <h2 class="font-display text-4xl font-extrabold uppercase leading-[0.92] tracking-tight text-ink sm:text-6xl">
+      <span class="hl-block">Coming</span> Soon
+    </h2>
+  </div>
+
+  <!-- Logo in premium interactive glass -->
+  <div class="an-logo relative mb-8 inline-block">
+    <!-- Ambient glow behind the glass -->
+    <div class="pointer-events-none absolute -inset-x-14 -inset-y-12 -z-10 rounded-full blur-3xl animate-float" style="background: radial-gradient(ellipse at center, rgba(39,181,41,0.12), rgba(214,242,90,0.06) 50%, transparent 75%)"></div>
+    
+    <!-- The interactive glass container -->
+    <div class="logo-glass tilt-card group relative w-[clamp(240px,40vw,440px)]" id="logo-glass-container">
+      <!-- Frosted glass base -->
+      <div class="relative flex items-center justify-center overflow-hidden rounded-[28px] px-10 py-8"
+           style="background: linear-gradient(145deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.10) 40%, rgba(255,255,255,0.18) 100%);
+                  backdrop-filter: blur(28px) saturate(160%);
+                  -webkit-backdrop-filter: blur(28px) saturate(160%);
+                  border: 1px solid rgba(255,255,255,0.45);
+                  box-shadow: 0 8px 40px rgba(14,18,14,0.08), 0 2px 10px rgba(14,18,14,0.04), inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(255,255,255,0.15);">
+        
+        <!-- Fine mesh texture layer (subtle, premium) -->
+        <div class="pointer-events-none absolute inset-0 rounded-[28px] opacity-[0.035]"
+             style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E&quot;); background-size: 120px;"></div>
+        
+        <!-- Gradient border shimmer -->
+        <div class="pointer-events-none absolute inset-0 rounded-[28px]"
+             style="padding: 1.5px;
+                    background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(214,242,90,0.2) 25%, rgba(255,255,255,0.15) 50%, rgba(39,181,41,0.2) 75%, rgba(255,255,255,0.5) 100%);
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;"></div>
+        
+        <!-- Mouse-tracking spotlight -->
+        <div class="logo-spotlight pointer-events-none absolute inset-0 rounded-[28px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+             style="background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.22), transparent 45%);
+                    mix-blend-mode: overlay;"></div>
+        
+        <!-- Chromatic edge bleed -->
+        <div class="pointer-events-none absolute -inset-[2px] -z-10 rounded-[30px] opacity-50"
+             style="background: linear-gradient(135deg, rgba(214,242,90,0.18) 0%, transparent 25%, transparent 75%, rgba(39,181,41,0.18) 100%);
+                    filter: blur(10px);"></div>
+        
+        <!-- Top highlight reflection -->
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-[45%] rounded-t-[28px]"
+             style="background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 100%);"></div>
+        
+        <!-- The logo -->
+        <img src="/capq-logo.png" alt="CapQ — Right Capital, Structured Right" 
+             class="relative z-10 w-full h-auto max-h-[100px] object-contain drop-shadow-[0_2px_8px_rgba(14,18,14,0.06)] transition-transform duration-500 group-hover:scale-[1.03]" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Status pill -->
+  <div class="an-pill mb-7 inline-flex items-center gap-2 rounded-full border border-green/25 bg-green-tint/80 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-green-deep backdrop-blur-sm">
+    <span class="h-1.5 w-1.5 animate-pulse-soft rounded-full bg-green" style="box-shadow:0 0 8px #27B529"></span>
+    Something exceptional is being built
+  </div>
+
+  <!-- Headline -->
+  <div class="an-head mb-6 text-center">
+    <h1 class="font-display text-[clamp(34px,6.2vw,72px)] font-bold leading-[0.98] tracking-tight text-ink">
+      <span class="block overflow-hidden"><span class="an-head-line block">Right Capital.</span></span>
+      <span class="block overflow-hidden"><span class="an-head-line block"><span class="hl-block">Structured</span> Right.</span></span>
+    </h1>
+  </div>
+
+  <!-- Sub -->
+  <p class="an-sub mb-9 max-w-[52ch] text-center text-[15px] leading-[1.75] text-ink-soft">
+    A business finance advisory that sits on <span class="font-semibold text-ink">your side of the table</span> —
+    understanding your business first, then matching it to the right lender from
+    <span class="hl-lime mx-0.5">117+ banking & NBFC partners</span>. The full platform launches soon.
+    Until then, our credit strategists are ready to help you now.
+  </p>
+
+  <!-- CTAs in glass panels -->
+  <div class="flex w-full flex-col items-center gap-5">
+    <div class="an-cta mx-auto flex w-full max-w-md flex-col gap-3">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/917995290768?text=Hi%20CapQ%2C%20I%27d%20like%20to%20speak%20with%20a%20credit%20strategist%20about%20a%20finance%20enquiry." 
+         target="_blank" rel="noopener noreferrer"
+         class="glass-card tilt-card group flex items-center gap-4 px-5 py-4 transition-all duration-300 hover:shadow-[0_20px_50px_-15px_rgba(39,181,41,0.35)]">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green/10 ring-1 ring-green/20">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#1A8C1C"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.355A9.945 9.945 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.95 7.95 0 01-4.073-1.117l-.292-.173-3.02.822.84-2.96-.19-.303A7.95 7.95 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+        </span>
+        <span class="min-w-0 flex-1 text-left">
+          <span class="block text-[15px] font-semibold text-ink">Speak to a Credit Strategist</span>
+          <span class="block text-xs text-ink-faint">WhatsApp · instant reply · no commitment</span>
+        </span>
+        <svg class="shrink-0 text-ink-faint transition-transform duration-300 group-hover:translate-x-1 group-hover:text-ink-soft" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <!-- Call -->
+      <a href="tel:+917995290768" 
+         class="glass-card tilt-card group flex items-center gap-4 px-5 py-4 transition-all duration-300 hover:shadow-[0_20px_50px_-15px_rgba(14,18,14,0.15)]">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ink/[0.06] ring-1 ring-ink/10">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0E120E"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </span>
+        <span class="min-w-0 flex-1 text-left">
+          <span class="block text-[15px] font-semibold text-ink">Call Us Directly</span>
+          <span class="block text-xs text-ink-faint">+91 79952 90768 · Mon–Sat, 9am–7pm</span>
+        </span>
+        <svg class="shrink-0 text-ink-faint transition-transform duration-300 group-hover:translate-x-1 group-hover:text-ink-soft" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <p class="an-cta font-mono text-[11px] tracking-[0.06em] text-ink-faint">
+      Direct line · <a href="tel:+917995290768" class="text-green-deep underline-offset-2 hover:underline">+91 79952 90768</a> · all enquiries welcome
+    </p>
+  </div>
+</section>

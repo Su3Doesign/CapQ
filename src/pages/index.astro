@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GlassNav from '../components/GlassNav.astro';
+import GlassHero from '../components/GlassHero.astro';
+import GlassForm from '../components/GlassForm.astro';
+import GlassTicker from '../components/GlassTicker.astro';
+import GlassProducts from '../components/GlassProducts.astro';
+import GlassFooter from '../components/GlassFooter.astro';
+---
+
+<Layout>
+  <GlassNav />
+
+  <main class="relative z-10" id="root">
+    <GlassHero />
+
+    <!-- Enquiry form section -->
+    <section class="relative px-5 pb-10 pt-4">
+      <div class="flex w-full flex-col items-center gap-5">
+        <GlassForm />
+      </div>
+    </section>
+
+    <GlassTicker />
+    <GlassProducts />
+    <GlassFooter />
+  </main>
+</Layout>

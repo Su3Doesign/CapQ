@@ -1,0 +1,440 @@
+---
+import { SEO } from 'astro-seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "CapQ — Right Capital. Structured Right.",
+  description = "Premium business finance advisory for MSMEs in Hyderabad. The right capital, structured the right way, from 117+ banking & NBFC partners."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <link rel="icon" type="image/png" href="/capq-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Familjen+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <SEO 
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: "https://capq.in/og.jpg"
+      }
+    }}
+  />
+
+  <style is:global>
+    :root {
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+      --glass-blur: 24px;
+      --glass-sat: 140%;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: #FBFBF7;
+      color: #0E120E;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #27B529;
+      color: #fff;
+    }
+
+    /* ─── Rich Glass Morphism System ─── */
+    .glass-panel {
+      position: relative;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.08) 100%
+      );
+      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 
+        0 8px 32px rgba(14, 18, 14, 0.06),
+        0 2px 8px rgba(14, 18, 14, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                  box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .glass-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.4px;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .glass-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.18),
+        transparent 40%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 3;
+      mix-blend-mode: overlay;
+    }
+
+    .glass-panel:hover::after {
+      opacity: 1;
+    }
+
+    /* ─── Glass Card with 3D Tilt ─── */
+    .glass-card {
+      position: relative;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.06) 50%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 20px;
+      box-shadow: 
+        0 4px 24px rgba(14, 18, 14, 0.05),
+        0 1px 3px rgba(14, 18, 14, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+      transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.25),
+        transparent 40%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 2;
+      mix-blend-mode: soft-light;
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    .glass-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ─── Chromatic aberration edge ─── */
+    .glass-chromatic {
+      position: relative;
+    }
+
+    .glass-chromatic::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(214, 242, 90, 0.15) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(39, 181, 41, 0.15) 100%
+      );
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.6;
+    }
+
+    /* ─── Deep glass (darker, more opaque) ─── */
+    .glass-deep {
+      background: linear-gradient(
+        135deg,
+        rgba(14, 18, 14, 0.06) 0%,
+        rgba(14, 18, 14, 0.02) 100%
+      );
+      backdrop-filter: blur(32px) saturate(120%);
+      -webkit-backdrop-filter: blur(32px) saturate(120%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 
+        0 12px 40px rgba(14, 18, 14, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    /* ─── Highlight block ─── */
+    .hl-block {
+      background: #27B529;
+      color: #fff;
+      padding: 0.02em 0.28em;
+      border-radius: 0.18em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .hl-lime {
+      background: #D6F25A;
+      color: #0E120E;
+      padding: 0.02em 0.28em;
+      border-radius: 0.18em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    /* ─── Reveal animation base ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    /* ─── Grain overlay ─── */
+    .grain::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── Form styling ─── */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23737A72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+
+    select option, select optgroup {
+      background: #fff;
+      color: #0E120E;
+    }
+
+    /* ─── Reduced motion ─── */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+      * { animation: none !important; }
+    }
+
+    /* ─── Custom scrollbar ─── */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(14, 18, 14, 0.15);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(14, 18, 14, 0.25);
+    }
+  </style>
+</head>
+<body class="font-sans grain">
+  <div class="relative z-10" id="root">
+    <slot />
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" is:inline></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" is:inline></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.0/dist/lenis.min.js" is:inline></script>
+
+  <script is:inline>
+    // Global mouse tracking for glass reflection
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 100 + '%';
+      const y = (e.clientY / window.innerHeight) * 100 + '%';
+      document.documentElement.style.setProperty('--mouse-x', x);
+      document.documentElement.style.setProperty('--mouse-y', y);
+    });
+
+    // 3D Tilt for glass cards
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+
+    // Initialize Lenis + GSAP
+    (function() {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        document.querySelectorAll('.reveal').forEach(el => {
+          el.style.opacity = 1;
+          el.style.transform = 'none';
+        });
+        return;
+      }
+
+      const lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true
+      });
+
+      function raf(t) {
+        lenis.raf(t);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      gsap.registerPlugin(ScrollTrigger);
+      lenis.on('scroll', ScrollTrigger.update);
+
+      // Hero entrance timeline
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.from('.an-notice', { y: 22, opacity: 0, duration: 0.6 })
+        .from('.an-logo', { y: 36, opacity: 0, scale: 0.95, duration: 0.85 }, '-=0.3')
+        .from('.an-pill', { y: 16, opacity: 0, duration: 0.5 }, '-=0.45')
+        .from('.an-head-line', { yPercent: 110, opacity: 0, duration: 0.8, stagger: 0.1 }, '-=0.3')
+        .from('.an-sub', { y: 18, opacity: 0, duration: 0.55 }, '-=0.35')
+        .from('.an-cta', { y: 20, opacity: 0, duration: 0.55, stagger: 0.12 }, '-=0.3')
+        .from('.glass-float', { y: 40, opacity: 0, duration: 1, stagger: 0.15, ease: 'power2.out' }, '-=0.5');
+
+      // Scroll reveals
+      gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.to(el, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%' }
+        });
+      });
+
+      // Ghost parallax
+      gsap.to('.an-ghost', {
+        yPercent: -14,
+        ease: 'none',
+        scrollTrigger: { trigger: '#root', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Floating glass elements parallax
+      gsap.utils.toArray('.glass-float').forEach((el, i) => {
+        gsap.to(el, {
+          y: (i % 2 === 0 ? -30 : 30),
+          ease: 'none',
+          scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: 1.5 }
+        });
+      });
+    })();
+
+    // Form handling
+    window.capqSubmit = function() {
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const type = document.getElementById('f-type').value;
+      const amount = document.getElementById('f-amount').value;
+      const btn = document.getElementById('submit-btn');
+
+      if (!name || !phone || !type) {
+        btn.classList.remove('bg-green');
+        btn.classList.add('bg-red-500');
+        btn.textContent = 'Add name, number & requirement';
+        setTimeout(() => {
+          btn.classList.add('bg-green');
+          btn.classList.remove('bg-red-500');
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Request a Callback';
+        }, 2200);
+        return;
+      }
+
+      let msg = "Hi CapQ,\n\nI'd like to request a callback.\n\nName: " + name + "\nPhone: " + phone + "\nRequirement: " + type;
+      if (amount) msg += "\nApprox. amount: " + amount;
+      msg += "\n\nPlease have a credit strategist reach out. Thank you.";
+
+      document.getElementById('form-fields').classList.add('hidden');
+      const s = document.getElementById('form-success');
+      s.classList.remove('hidden');
+      s.classList.add('flex');
+
+      setTimeout(() => {
+        window.open('https://wa.me/917995290768?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+      }, 650);
+    };
+
+    // Year update
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = '© ' + new Date().getFullYear() + ' CapQ · Right Capital. Structured Right.';
+      }
+    });
+  </script>
+</body>
+</html>

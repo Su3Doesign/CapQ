@@ -1,0 +1,137 @@
+---
+---
+
+<div class="an-cta mx-auto w-full max-w-md">
+  <div class="enquiry-panel relative overflow-hidden rounded-3xl p-6 sm:p-8">
+    <!-- Subtle gradient glow behind panel -->
+    <div class="pointer-events-none absolute -inset-1 -z-10 rounded-3xl opacity-60" style="background: radial-gradient(ellipse at 30% 20%, rgba(39,181,41,0.08), transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(214,242,90,0.06), transparent 50%)"></div>
+
+    <div id="form-success" class="hidden flex-col items-center gap-3 py-4 text-center">
+      <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-tint ring-1 ring-green/30">
+        <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="#27B529" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <p class="text-lg font-semibold text-ink">Received. We'll call you shortly.</p>
+      <p class="text-sm leading-relaxed text-ink-faint">A credit strategist will reach you within 4 hours.<br>Your details are opening in WhatsApp — just hit send.</p>
+    </div>
+
+    <div id="form-fields">
+      <!-- Header -->
+      <div class="mb-6 flex items-center gap-3">
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-green/10 ring-1 ring-green/20">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4l6 4 6-4" stroke="#27B529" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="3" width="14" height="10" rx="2" stroke="#27B529" stroke-width="1.4"/></svg>
+        </span>
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-green-deep">Register an Enquiry</p>
+          <p class="text-[11px] text-ink-faint">A specialist matched to your need will call you back.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3.5">
+        <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+          <label class="flex flex-col gap-1.5">
+            <span class="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink-faint">Your name</span>
+            <input id="f-name" class="enquiry-input" placeholder="Arjun Mehta" autocomplete="name">
+          </label>
+          <label class="flex flex-col gap-1.5">
+            <span class="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink-faint">Mobile number</span>
+            <input id="f-phone" type="tel" class="enquiry-input" placeholder="+91 98765 43210" autocomplete="tel">
+          </label>
+        </div>
+
+        <label class="flex flex-col gap-1.5">
+          <span class="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink-faint">What do you need?</span>
+          <select id="f-type" class="enquiry-input cursor-pointer appearance-none">
+            <option value="" disabled selected>Select your requirement</option>
+            <optgroup label="Business Finance">
+              <option>MSME Business Loan — Working Capital</option>
+              <option>MSME Business Loan — Term Loan</option>
+              <option>Equipment & Machinery Finance</option>
+              <option>CGTMSE — Collateral-free Loan</option>
+              <option>Loan Against Property (LAP)</option>
+              <option>Trade Finance</option>
+              <option>Bill Discounting</option>
+              <option>Invoice Finance</option>
+              <option>Project Finance</option>
+              <option>Bank Guarantee</option>
+              <option>Balance Transfer & Top-Up</option>
+            </optgroup>
+            <optgroup label="Personal & Property">
+              <option>Home, Villa & Mortgage Loan</option>
+              <option>Personal Loan</option>
+              <option>Vehicle Loan</option>
+              <option>Education Loan</option>
+            </optgroup>
+            <optgroup label="Sector Specialist">
+              <option>Healthcare Professionals</option>
+              <option>IT & Technology Sector</option>
+            </optgroup>
+            <option>Other / Not Sure</option>
+          </select>
+        </label>
+
+        <label class="flex flex-col gap-1.5">
+          <span class="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink-faint">Approximate amount</span>
+          <select id="f-amount" class="enquiry-input cursor-pointer appearance-none">
+            <option value="" disabled selected>Select range (optional)</option>
+            <option>Below ₹25 Lakh</option>
+            <option>₹25L – ₹1 Crore</option>
+            <option>₹1 Crore – ₹5 Crore</option>
+            <option>₹5 Crore – ₹20 Crore</option>
+            <option>Above ₹20 Crore</option>
+          </select>
+        </label>
+
+        <button id="submit-btn" type="button" onclick="capqSubmit()" class="mt-1 flex items-center justify-center gap-2 rounded-xl bg-green px-5 py-3.5 text-xs font-bold uppercase tracking-[0.1em] text-white shadow-[0_10px_28px_-10px_rgba(39,181,41,0.55)] transition-all hover:-translate-y-0.5 hover:bg-green-bright hover:shadow-[0_14px_36px_-10px_rgba(39,181,41,0.6)]">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Request a Callback
+        </button>
+
+        <p class="mt-1 text-center text-[11px] leading-relaxed text-ink-faint">
+          <span class="font-semibold text-green-deep">Enquiry & advisory at zero cost to you.</span><br>
+          A specialist is assigned within 4 hours.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .enquiry-panel {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9f5 50%, #f4f5ef 100%);
+    border: 1px solid rgba(228, 229, 220, 0.8);
+    box-shadow:
+      0 1px 2px rgba(14, 18, 14, 0.04),
+      0 4px 16px rgba(14, 18, 14, 0.06),
+      0 20px 60px -20px rgba(14, 18, 14, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .enquiry-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #0E120E;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #E4E5DC;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .enquiry-input::placeholder {
+    color: #737A72;
+  }
+
+  .enquiry-input:focus {
+    border-color: #27B529;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 4px rgba(39, 181, 41, 0.08);
+  }
+
+  select.enquiry-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23737A72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+</style>
